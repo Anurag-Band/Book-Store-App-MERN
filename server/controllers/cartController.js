@@ -11,7 +11,7 @@ exports.getSingleUserCart = BigPromise(async (req, res, next) => {
     "photos stock"
   );
 
-  if (cart && cart.items.length > 0) {
+  if (cart && cart.items?.length > 0) {
     res.status(200).json({
       success: true,
       cart,

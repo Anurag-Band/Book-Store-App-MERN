@@ -33,7 +33,7 @@ const ShippingInfoPage = () => {
   const handleShippingDetailsSubmit = (e) => {
     e.preventDefault();
 
-    if (phoneNumber.length !== 10) {
+    if (phoneNumber?.length !== 10) {
       return setError("Phone Number should be of 10 Digits!");
     }
 

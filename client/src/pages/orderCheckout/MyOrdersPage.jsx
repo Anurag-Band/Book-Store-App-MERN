@@ -21,12 +21,12 @@ const MyOrdersPage = () => {
   const rows = [];
 
   orders &&
-    orders.length > 0 &&
+    orders?.length > 0 &&
     orders.forEach((order) =>
       rows.push({
         id: order?._id,
         status: order.orderStatus,
-        itemQty: order.orderItems.length,
+        itemQty: order.orderItems?.length,
         amount: order.totalAmount,
       })
     );

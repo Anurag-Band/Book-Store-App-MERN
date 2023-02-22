@@ -51,7 +51,7 @@ const CartPage = () => {
   };
 
   const handleCheckout = () => {
-    cartItems.length === 0
+    cartItems?.length === 0
       ? toast.dark("Cart is Empty!", {
           position: "bottom-center",
           autoClose: 3000,
@@ -118,7 +118,7 @@ const CartPage = () => {
           <div className='flex items-center justify-between'>
             <div className='flex flex-col'>
               <h3 className='text-xl font-semibold'>Sub-Total</h3>
-              <p>{cartItems.length} items</p>
+              <p>{cartItems?.length} items</p>
             </div>
             <h3 className='py-3 text-2xl font-bold'>$ {subTotal}</h3>
           </div>

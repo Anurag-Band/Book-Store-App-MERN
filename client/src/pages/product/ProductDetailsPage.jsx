@@ -232,7 +232,7 @@ const ProductDetailsPage = () => {
             </h2>
             <hr className='my-4 bg-slate-200 p-[0.4px]' />
             <div className='flex flex-wrap gap-2 md:gap-4 mx-auto'>
-              {productReviews.length > 0 ? (
+              {productReviews?.length > 0 ? (
                 productReviews?.map((review) => (
                   <ReviewCard
                     key={review?._id}

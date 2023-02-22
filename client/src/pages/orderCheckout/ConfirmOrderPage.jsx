@@ -13,7 +13,7 @@ const ConfirmOrderPage = () => {
   const ADDRESS = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.country}, ${shippingInfo.postalCode}`;
 
   const SHIPPING_CHARGES =
-    cartItems.length * 40 > 180 ? 180 : cartItems.length * 40;
+    cartItems?.length * 40 > 180 ? 180 : cartItems?.length * 40;
 
   const GST = subTotal * 0.18;
 

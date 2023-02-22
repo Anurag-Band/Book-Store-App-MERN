@@ -31,10 +31,10 @@ const ProfileSpeedDial = () => {
     {
       icon: (
         <ShoppingCartIcon
-          className={cartItems.length > 0 ? "text-red-500" : ""}
+          className={cartItems?.length > 0 ? "text-red-500" : ""}
         />
       ),
-      name: `Cart(${cartItems.length})`,
+      name: `Cart(${cartItems?.length})`,
       link: cart,
     },
     { icon: <ExitToAppIcon />, name: "Logout", link: logout },

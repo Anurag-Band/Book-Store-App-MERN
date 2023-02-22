@@ -21,9 +21,9 @@ const cartSlice = createSlice({
       })
       .addCase(fetchCartItems.fulfilled, (state, action) => {
         state.status = STATUSES.IDLE;
-        state.cartItems = action.payload.cart.items;
-        state.subTotal = action.payload.cart.subTotal;
-        state.statusMessage = action.payload.status;
+        state.cartItems = action.payload?.cart?.items;
+        state.subTotal = action.payload?.cart?.subTotal;
+        state.statusMessage = action.payload?.status;
       })
       .addCase(fetchCartItems, (state, action) => {
         state.status = STATUSES.ERROR;

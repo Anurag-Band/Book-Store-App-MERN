@@ -23,7 +23,7 @@ const AdminProductsPage = () => {
   const rows = [];
 
   allProducts &&
-    allProducts.length > 0 &&
+    allProducts?.length > 0 &&
     allProducts.forEach((product) =>
       rows.push({
         id: product?._id,

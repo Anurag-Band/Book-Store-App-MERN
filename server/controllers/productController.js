@@ -14,7 +14,7 @@ exports.getAllProducts = BigPromise(async (req, res, next) => {
     .filter();
 
   let products = await productsObj.base;
-  const filteredProductsCount = products.length;
+  const filteredProductsCount = products?.length;
 
   productsObj.pager(resultPerPage);
   products = await productsObj.base.clone();
@@ -65,7 +65,7 @@ exports.addReview = BigPromise(async (req, res, next) => {
     });
   } else {
     product.reviews.push(review);
-    product.numOfReviews = product.reviews.length;
+    product.numOfReviews = product.reviews?.length;
   }
 
   let avg = 0;
@@ -74,7 +74,7 @@ exports.addReview = BigPromise(async (req, res, next) => {
     avg += rev.rating;
   });
 
-  product.ratings = avg / product.reviews.length;
+  product.ratings = avg / product.reviews?.length;
 
   await product.save({ validateBeforeSave: false });
 
@@ -105,12 +105,12 @@ exports.userDeleteReview = BigPromise(async (req, res, next) => {
 
   let ratings = 0;
 
-  if (reviews.length === 0) {
+  if (reviews?.length === 0) {
     ratings = 0;
   } else {
-    ratings = avg / reviews.length;
+    ratings = avg / reviews?.length;
   }
-  const numOfReviews = reviews.length;
+  const numOfReviews = reviews?.length;
 
   await Product.findByIdAndUpdate(
     productId,
@@ -182,12 +182,12 @@ exports.adminDeleteReview = BigPromise(async (req, res, next) => {
 
   let ratings = 0;
 
-  if (reviews.length === 0) {
+  if (reviews?.length === 0) {
     ratings = 0;
   } else {
-    ratings = avg / reviews.length;
+    ratings = avg / reviews?.length;
   }
-  const numOfReviews = reviews.length;
+  const numOfReviews = reviews?.length;
 
   await Product.findByIdAndUpdate(
     req.query.productId,
@@ -217,7 +217,7 @@ exports.adminAddProduct = BigPromise(async (req, res, next) => {
   }
 
   if (req.body.photos) {
-    for (let i = 0; i < req.body.photos.length; i++) {
+    for (let i = 0; i < req.body.photos?.length; i++) {
       let result = await cloudinary.v2.uploader.upload(req.body.photos[i], {
         folder: "books",
       });
@@ -262,12 +262,12 @@ exports.adminUpdateOneProduct = BigPromise(async (req, res, next) => {
   let imagesArray = [];
 
   if (req.files) {
-    for (let i = 0; i < product.photos.length; i++) {
+    for (let i = 0; i < product.photos?.length; i++) {
       await cloudinary.v2.uploader.destroy(product.photos[i].public_id);
     }
 
     if (Array.isArray(req.files.photos)) {
-      for (let i = 0; i < req.files.photos.length; i++) {
+      for (let i = 0; i < req.files.photos?.length; i++) {
         const result = await cloudinary.v2.uploader.upload(
           req.files.photos[i].tempFilePath,
           { folder: "products" }
@@ -315,7 +315,7 @@ exports.adminDeleteOneProduct = BigPromise(async (req, res, next) => {
     return next(new CustomError("No Products Found related to the ID!!!", 401));
   }
 
-  for (let i = 0; i < product.photos.length; i++) {
+  for (let i = 0; i < product.photos?.length; i++) {
     await cloudinary.v2.uploader.destroy(product.photos[i].public_id);
   }
 

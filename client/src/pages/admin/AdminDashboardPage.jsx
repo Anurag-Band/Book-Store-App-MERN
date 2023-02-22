@@ -21,7 +21,7 @@ const AdminDashboardPage = () => {
   const allUsers = useSelector((state) => state.auth.allUsers);
 
   let outOfStock = 0;
-  const productCount = allProducts && allProducts.length;
+  const productCount = allProducts && allProducts?.length;
 
   allProducts &&
     allProducts.forEach((product) => {
@@ -71,7 +71,7 @@ const AdminDashboardPage = () => {
               PRODUCTS
             </h2>
             <h3 className='font-bold text-[2.5vw] lg:text-[1.6vw]'>
-              {allProducts && allProducts.length}
+              {allProducts && allProducts?.length}
             </h3>
           </div>
 
@@ -81,7 +81,7 @@ const AdminDashboardPage = () => {
               ORDERS
             </h2>
             <h3 className='font-bold text-[2.5vw] lg:text-[1.6vw]'>
-              {allOrders && allOrders.length}
+              {allOrders && allOrders?.length}
             </h3>
           </div>
 
@@ -91,7 +91,7 @@ const AdminDashboardPage = () => {
               TOTAL USERS
             </h2>
             <h3 className='font-bold text-[2.5vw] lg:text-[1.6vw]'>
-              {allUsers && allUsers.length}
+              {allUsers && allUsers?.length}
             </h3>
           </div>
         </div>
