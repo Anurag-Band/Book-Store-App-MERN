@@ -20,9 +20,6 @@
 # testing
 /client/coverage
 
-# production
-/client/build
-
 # misc
 /client/.DS_Store
 /client/.env.local
