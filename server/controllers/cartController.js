@@ -4,7 +4,7 @@ const BigPromise = require("../middlewares/BigPromise");
 const CustomError = require("../utils/customError");
 
 exports.getSingleUserCart = BigPromise(async (req, res, next) => {
-  const user = req.user._id;
+  const user = req.user?._id;
 
   const cart = await Cart.findOne({ user }).populate(
     "items.itemId",
@@ -25,7 +25,7 @@ exports.getSingleUserCart = BigPromise(async (req, res, next) => {
 });
 
 exports.addToCart = BigPromise(async (req, res, next) => {
-  const user = req.user._id;
+  const user = req.user?._id;
 
   const { itemId } = req.body;
 
@@ -93,7 +93,7 @@ exports.addToCart = BigPromise(async (req, res, next) => {
 });
 
 exports.removeFromCart = BigPromise(async (req, res, next) => {
-  const user = req.user._id;
+  const user = req.user?._id;
   const itemId = req.query.itemId;
   try {
     let cart = await Cart.findOne({ user });
@@ -129,7 +129,7 @@ exports.removeFromCart = BigPromise(async (req, res, next) => {
 });
 
 exports.decreaseCartItemQuantity = BigPromise(async (req, res, next) => {
-  const user = req.user._id;
+  const user = req.user?._id;
   const itemId = req.query.itemId;
   try {
     let cart = await Cart.findOne({ user });

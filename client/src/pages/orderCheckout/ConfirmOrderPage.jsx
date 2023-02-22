@@ -67,7 +67,7 @@ const ConfirmOrderPage = () => {
           <div className="overflow-y-scroll h-[53vh]">
             {cartItems?.map((item) => (
               <div
-                key={item._id}
+                key={item?._id}
                 className="flex items-center space-x-5 p-3 bg-white shadow-lg rounded-sm border border-slate-500 m-2"
               >
                 <img

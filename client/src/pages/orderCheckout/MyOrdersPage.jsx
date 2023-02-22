@@ -24,7 +24,7 @@ const MyOrdersPage = () => {
     orders.length > 0 &&
     orders.forEach((order) =>
       rows.push({
-        id: order._id,
+        id: order?._id,
         status: order.orderStatus,
         itemQty: order.orderItems.length,
         amount: order.totalAmount,
@@ -96,7 +96,7 @@ const MyOrdersPage = () => {
 
         <div className='w-full lg:w-[50%]'>
           {orderDetails &&
-            orderDetails._id &&
+            orderDetails?._id &&
             (status === STATUSES.LOADING ? (
               <div className='flex items-center justify-center w-full h-full'>
                 <img src={Loader} alt='Loading...' className='w-24 h-24' />

@@ -46,19 +46,19 @@ exports.addReview = BigPromise(async (req, res, next) => {
   const product = await Product.findById(productId);
 
   const review = {
-    user: req.user._id,
+    user: req.user?._id,
     name: req.user.name,
     rating: Number(rating),
     comment,
   };
 
   const isUserAlreadyReviewed = product.reviews.find(
-    (rev) => rev.user.toString() === req.user._id.toString()
+    (rev) => rev.user.toString() === req.user?._id.toString()
   );
 
   if (isUserAlreadyReviewed) {
     product.reviews.forEach((review) => {
-      if (review.user.toString() === req.user._id.toString()) {
+      if (review.user.toString() === req.user?._id.toString()) {
         review.comment = comment;
         review.rating = rating;
       }
@@ -93,7 +93,7 @@ exports.userDeleteReview = BigPromise(async (req, res, next) => {
   }
 
   const reviews = product.reviews.filter(
-    (review) => review.user.toString() !== req.user._id.toString()
+    (review) => review.user.toString() !== req.user?._id.toString()
   );
 
   // adjust ratings
@@ -170,7 +170,7 @@ exports.adminDeleteReview = BigPromise(async (req, res, next) => {
   }
 
   const reviews = product.reviews.filter(
-    (review) => review._id.toString() !== req.query.reviewId.toString()
+    (review) => review?._id.toString() !== req.query.reviewId.toString()
   );
 
   // adjust ratings

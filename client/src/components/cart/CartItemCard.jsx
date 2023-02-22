@@ -5,7 +5,7 @@ const CartItemCard = ({ item }) => {
   return (
     <>
       <Link
-        to={`/product/${item.itemId._id}`}
+        to={`/product/${item.itemId?._id}`}
         className="w-40 h-40 overflow-hidden rounded-full"
       >
         <img

@@ -61,11 +61,11 @@ const OrderDetailsPage = ({ order }) => {
             order.orderItems.length > 0 &&
             order.orderItems.map((item) => (
               <div
-                key={item.itemId._id}
+                key={item.itemId?._id}
                 className="flex items-center space-x-5"
               >
                 <Link
-                  to={`/product/${item.itemId._id}`}
+                  to={`/product/${item.itemId?._id}`}
                   className="w-28 h-28 overflow-hidden rounded-full"
                 >
                   <img

@@ -23,7 +23,7 @@ exports.createOrder = BigPromise(async (req, res, next) => {
     shippingAmount,
     totalAmount,
     paidAt: Date.now(),
-    user: req.user._id,
+    user: req.user?._id,
   });
 
   res.status(200).json({
@@ -50,7 +50,7 @@ exports.getOneOrder = BigPromise(async (req, res, next) => {
 });
 
 exports.getLoggedInUserOrders = BigPromise(async (req, res, next) => {
-  const orders = await Order.find({ user: req.user._id }).populate(
+  const orders = await Order.find({ user: req.user?._id }).populate(
     "orderItems.itemId",
     "photos"
   );

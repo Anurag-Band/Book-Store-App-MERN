@@ -20,7 +20,7 @@ const ReviewCard = ({ review, productId }) => {
         alt={review.name}
         className='w-20 h-20 object-cover rounded-full'
       />
-      {isAuthenticated && user._id === review.user._id && (
+      {isAuthenticated && user?._id === review.user?._id && (
         <Tooltip
           onClick={handleUserDeleteReview}
           title='Delete Review'

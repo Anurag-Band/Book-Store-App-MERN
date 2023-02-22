@@ -5,7 +5,7 @@ import Rating from "@mui/material/Rating";
 const ProductCard = ({ product }) => {
   return (
     <Link
-      to={`/product/${product._id}`}
+      to={`/product/${product?._id}`}
       className='flex flex-col w-[15rem] h-[24rem] space-y-1 bg-white rounded-sm transition-all delay-75 hover:-translate-y-2 shadow-lg shadow-indigo-300/50'
     >
       <div className='overflow-hidden w-[15rem] h-[20rem]'>

@@ -64,7 +64,7 @@ userSchema.methods.comparePassword = async function (userSendPassword) {
 
 // 4 ->> getJwtToken() -> create and return JWT Token -> "_id" of database is to be passed
 userSchema.methods.getJwtToken = function () {
-  return jwt.sign({ id: this._id }, process.env.SECRET_KEY, {
+  return jwt.sign({ id: this?._id }, process.env.SECRET_KEY, {
     expiresIn: process.env.JWT_EXPIRY,
   });
 };

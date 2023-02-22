@@ -26,7 +26,7 @@ const AdminUsersPage = () => {
     allUsers.length > 0 &&
     allUsers.forEach((user) =>
       rows.push({
-        id: user._id,
+        id: user?._id,
         email: user.email,
         name: user.name,
         role: user.role,

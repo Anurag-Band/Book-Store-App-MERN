@@ -30,7 +30,7 @@ const ProductDetailsPage = () => {
     status,
     isReviewDeleted,
   } = useSelector((state) => state.product);
-  const itemId = product?._id;
+  const itemId = product??._id;
   const [quantity, setQuantity] = useState(0);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -121,7 +121,7 @@ const ProductDetailsPage = () => {
               {product?.name}
             </h1>
             <h1 className='text-sm text-gray-600 font-medium mb-3'>
-              Product Id : # {product?._id}
+              Product Id : # {product??._id}
             </h1>
             <hr className='my-2 bg-slate-200 p-[0.4px]' />
             <div className='flex items-center space-x-1 mb-2'>
@@ -234,7 +234,7 @@ const ProductDetailsPage = () => {
             <div className='flex flex-wrap gap-2 md:gap-4 mx-auto'>
               {productReviews.length > 0 ? (
                 productReviews?.map((review) => (
-                  <ReviewCard key={review._id} review={review} productId={id} />
+                  <ReviewCard key={review?._id} review={review} productId={id} />
                 ))
               ) : (
                 <div className='flex items-center justify-center min-h-[40vh] w-full'>
