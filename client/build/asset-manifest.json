@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3652552f.css",
+    "main.js": "/static/js/main.8228cba6.js",
+    "static/media/login-banner.jpg": "/static/media/login-banner.0a225941bf8ba6a2fe7a.jpg",
+    "static/media/banner-2.jpg": "/static/media/banner-2.84b7b5e5b7c72547df89.jpg",
+    "static/media/banner-3.jpg": "/static/media/banner-3.3f5d9c48d9a437981207.jpg",
+    "static/media/banner-6.jpg": "/static/media/banner-6.dea0515bba9a8c42d374.jpg",
+    "static/media/banner-4.jpg": "/static/media/banner-4.219d41f174c7b2ca82a5.jpg",
+    "static/media/banner-1.jpg": "/static/media/banner-1.ea046ec012349be8d232.jpg",
+    "static/media/orders.gif": "/static/media/orders.7790a6a11bf52d20dab5.gif",
+    "static/media/banner-5.jpg": "/static/media/banner-5.3d5962bf39428de0b62e.jpg",
+    "static/media/products.gif": "/static/media/products.473153aa56115a0d98ca.gif",
+    "static/media/play-store.png": "/static/media/play-store.4c15261fc16d1b0db7aa.png",
+    "static/media/app-store.png": "/static/media/app-store.8d98421a597f340eb727.png",
+    "static/media/secure-payments-image.webp": "/static/media/secure-payments-image.746004c2e7ff7456c051.webp",
+    "static/media/whatsapp-icon.svg": "/static/media/whatsapp-icon.4b2d9a2b96bcc510de7e42c4c607c1b8.svg",
+    "static/media/mail-icon.svg": "/static/media/mail-icon.e16ef1279ed3d03f0d990cf5ca9d3f33.svg",
+    "static/media/twitter-icon.svg": "/static/media/twitter-icon.145d6d908a58b26f0d4c3d5a2d058c9f.svg",
+    "index.html": "/index.html",
+    "static/media/facebook-icon.svg": "/static/media/facebook-icon.27cdc27acd49f385f3b6ea70c5511fde.svg",
+    "static/media/loader.svg": "/static/media/loader.bb2133c47cd3527465ae0c382f19f210.svg",
+    "main.3652552f.css.map": "/static/css/main.3652552f.css.map",
+    "main.8228cba6.js.map": "/static/js/main.8228cba6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3652552f.css",
+    "static/js/main.8228cba6.js"
+  ]
+}
