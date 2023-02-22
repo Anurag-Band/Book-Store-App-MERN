@@ -25,7 +25,7 @@ const CartPage = () => {
   const handleAddToCart = (item) => {
     if (item.quantity >= item.stock) return;
 
-    dispatch(addToCart(item.itemId._id))
+    dispatch(addToCart(item.itemId?._id))
       .then(unwrapResult)
       .then(() => {
         reFetchCartItems();
@@ -35,7 +35,7 @@ const CartPage = () => {
   const handleDecreaseQuantity = (item) => {
     if (item.quantity === 1) return;
 
-    dispatch(decreaseCartItemQuantity(item.itemId._id))
+    dispatch(decreaseCartItemQuantity(item.itemId?._id))
       .then(unwrapResult)
       .then((obj) => {
         reFetchCartItems();
@@ -43,7 +43,7 @@ const CartPage = () => {
   };
 
   const handleRemove = (item) => {
-    dispatch(removeFromCart(item.itemId._id))
+    dispatch(removeFromCart(item.itemId?._id))
       .then(unwrapResult)
       .then((obj) => {
         reFetchCartItems();
@@ -76,7 +76,7 @@ const CartPage = () => {
           {cartItems &&
             cartItems.map((item) => (
               <div
-                key={item._id}
+                key={item?._id}
                 className='flex items-center gap-10 p-5 bg-white shadow-md rounded-sm border-b-2 m-3'
               >
                 <CartItemCard item={item} />

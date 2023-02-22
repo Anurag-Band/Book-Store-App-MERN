@@ -26,7 +26,7 @@ const AdminProductsPage = () => {
     allProducts.length > 0 &&
     allProducts.forEach((product) =>
       rows.push({
-        id: product._id,
+        id: product?._id,
         name: product.name,
         stock: product.stock,
         price: product.price,

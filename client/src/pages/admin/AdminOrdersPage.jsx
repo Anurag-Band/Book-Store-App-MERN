@@ -17,7 +17,7 @@ const AdminOrdersPage = () => {
     allOrders.length > 0 &&
     allOrders.forEach((order) =>
       rows.push({
-        id: order._id,
+        id: order?._id,
         status: order.orderStatus,
         itemQty: order.orderItems.length,
         amount: order.totalAmount,

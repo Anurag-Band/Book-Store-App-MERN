@@ -88,7 +88,7 @@ const ProductsPage = () => {
             <div className='grid grid-cols-2 px-2 lg:px-8 my-14 sm:grid-cols-3 xl:grid-cols-4 gap-8 sm:gap-10 md:gap-12 xl:gap-14'>
               {products &&
                 products.map((product) => (
-                  <ProductCard key={product._id} product={product} />
+                  <ProductCard key={product?._id} product={product} />
                 ))}
             </div>
           )

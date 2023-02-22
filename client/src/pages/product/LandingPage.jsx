@@ -39,7 +39,7 @@ const LandingPage = () => {
           ) : (
             <div className='container mx-auto px-2 xl:px-16 my-10 flex overflow-x-scroll space-x-14'>
               {getShuffledProducts(products).map((product) => (
-                <ProductCard key={product._id} product={product} />
+                <ProductCard key={product?._id} product={product} />
               ))}
             </div>
           )}
@@ -55,7 +55,7 @@ const LandingPage = () => {
           ) : (
             <div className='container mx-auto px-2 xl:px-16 my-10 flex overflow-x-scroll space-x-14'>
               {getShuffledProducts(products).map((product) => (
-                <ProductCard key={product._id} product={product} />
+                <ProductCard key={product?._id} product={product} />
               ))}
             </div>
           )}
@@ -71,7 +71,7 @@ const LandingPage = () => {
           ) : (
             <div className='container mx-auto px-2 xl:px-16 my-10 flex overflow-x-scroll space-x-14'>
               {getShuffledProducts(products).map((product) => (
-                <ProductCard key={product._id} product={product} />
+                <ProductCard key={product?._id} product={product} />
               ))}
             </div>
           )}
@@ -87,7 +87,7 @@ const LandingPage = () => {
           ) : (
             <div className='container mx-auto px-2 xl:px-16 my-10 flex overflow-x-scroll space-x-14'>
               {getShuffledProducts(products).map((product) => (
-                <ProductCard key={product._id} product={product} />
+                <ProductCard key={product?._id} product={product} />
               ))}
             </div>
           )}
@@ -103,7 +103,7 @@ const LandingPage = () => {
           ) : (
             <div className='container mx-auto px-2 xl:px-16 my-10 flex overflow-x-scroll space-x-14'>
               {getShuffledProducts(products).map((product) => (
-                <ProductCard key={product._id} product={product} />
+                <ProductCard key={product?._id} product={product} />
               ))}
             </div>
           )}
